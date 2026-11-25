@@ -124,6 +124,8 @@ app.get("/api/admin/verify", authenticateToken, (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend running at http://localhost:${PORT}`);
+const PORT = Number(process.env.PORT) || 5001;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Backend listening on 0.0.0.0:${PORT}`);
 });
